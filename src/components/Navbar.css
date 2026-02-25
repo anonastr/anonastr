@@ -245,3 +245,25 @@
         display: none;
     }
 }
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .navbar-inner {
+        gap: 12px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+        letter-spacing: 0.1em;
+    }
+
+    .logo-svg {
+        transform: scale(0.75);
+        transform-origin: left center;
+        margin-left: -4px;
+        margin-right: -8px;
+    }
+}

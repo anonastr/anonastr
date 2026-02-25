@@ -68,6 +68,7 @@
     margin-bottom: 20px;
     color: #FDECB3;
     text-shadow: 0 4px 24px rgba(232, 196, 154, 0.25);
+    word-wrap: break-word;
 }
 
 .gradient-text {
