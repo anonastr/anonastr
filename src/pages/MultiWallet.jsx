@@ -55,7 +55,7 @@ export default function MultiWallet() {
 
                     if (action === 'buy') {
                         // Mocking a Uniswap V2 Router swapExactETHForTokens
-                        // For demo, we just send ETH to the contract
+                        // For demo, we just send ASTER to the contract
                         txResponse = await wallet.sendTransaction({
                             to: contractAddr,
                             value: ethers.parseEther(ethAmount || '0'),
@@ -63,7 +63,7 @@ export default function MultiWallet() {
                         })
                     } else {
                         // Action = sell. Mocking transferring tokens or calling a sell function.
-                        // sending 0 ETH call as a demo
+                        // sending 0 ASTER call as a demo
                         txResponse = await wallet.sendTransaction({
                             to: contractAddr,
                             data: '0x' + 'swapExactTokensForETHSupportingFeeOnTransferTokens'.padEnd(64, '0'), // Mock signature
@@ -74,7 +74,7 @@ export default function MultiWallet() {
                     return {
                         address: wallet.address,
                         status: 'success',
-                        message: action === 'buy' ? `Bought with ${ethAmount} ETH` : `Sold tokens successfully`,
+                        message: action === 'buy' ? `Bought with ${ethAmount} ASTER` : `Sold tokens successfully`,
                         hash: txResponse.hash
                     }
                 } catch (e) {
@@ -136,7 +136,7 @@ export default function MultiWallet() {
 
                     {action === 'buy' && (
                         <div className="input-group" style={{ flex: 1, marginBottom: 0 }}>
-                            <label className="input-label">ETH Per Wallet</label>
+                            <label className="input-label">ASTER Per Wallet</label>
                             <input
                                 className="input"
                                 type="number"

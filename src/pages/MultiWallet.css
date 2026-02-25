@@ -1,2 +1,33 @@
 /* MultiWallet.css */
 /* Styles for MultiWallet component */
+
+@media (max-width: 640px) {
+    .bundle-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+
+    .wallet-list-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 12px;
+    }
+
+    .wallet-list-item .balance-badge {
+        align-self: flex-start;
+    }
+
+    .status-list-item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+
+    .status-list-item>div {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

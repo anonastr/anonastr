@@ -1,3 +1,6 @@
+/* DustSweeper.css */
+/* Styles for DustSweeper component */
+
 .results-list {
     max-height: 400px;
     overflow-y: auto;
@@ -18,4 +21,32 @@
 
 .result-item.error {
     box-shadow: 0 0 10px rgba(239, 68, 68, 0.05);
+}
+
+@media (max-width: 640px) {
+    .results-list {
+        max-height: 300px;
+    }
+
+    .result-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+
+    .result-item>div {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .result-item a {
+        align-self: flex-start;
+        display: inline-block;
+        margin-top: 4px;
+        padding: 4px 8px;
+        background: rgba(232, 196, 154, 0.1);
+        border-radius: 4px;
+    }
 }

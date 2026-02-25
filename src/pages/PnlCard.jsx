@@ -13,9 +13,9 @@ export default function PnlCard() {
     const canvasRef = useRef(null)
 
     async function connectWallet() {
-        if (!window.ethereum) { setError('No wallet detected.'); return }
+        if (!window.Aster) { setError('No wallet detected.'); return }
         try {
-            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+            const accounts = await window.Aster.request({ method: 'eth_requestAccounts' })
             setAddress(accounts[0])
         } catch { setError('Connection rejected.') }
     }

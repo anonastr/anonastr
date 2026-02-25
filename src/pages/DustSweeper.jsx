@@ -50,7 +50,7 @@ export default function DustSweeper() {
                     }
 
                     // Estimate gas for a simple transfer
-                    const gasLimit = 21000n // Standard ETH transfer
+                    const gasLimit = 21000n // Standard ASTER transfer
                     const feeData = await provider.getFeeData()
                     const gasPrice = feeData.gasPrice || (await provider.getBlock('latest')).baseFeePerGas
 
@@ -60,7 +60,7 @@ export default function DustSweeper() {
                         newResults.push({
                             address: wallet.address,
                             status: 'skipped',
-                            message: `Balance too low to cover gas (${ethers.formatEther(balance)} ETH)`
+                            message: `Balance too low to cover gas (${ethers.formatEther(balance)} ASTER)`
                         })
                         continue
                     }
@@ -78,7 +78,7 @@ export default function DustSweeper() {
                     newResults.push({
                         address: wallet.address,
                         status: 'success',
-                        message: `Sent ${ethers.formatEther(amountToSend)} ETH`,
+                        message: `Sent ${ethers.formatEther(amountToSend)} ASTER`,
                         hash: tx.hash
                     })
                 } catch (err) {
@@ -96,7 +96,7 @@ export default function DustSweeper() {
     return (
         <div className="page fade-up">
             <h1 className="page-title">Dust Sweeper</h1>
-            <p className="page-subtitle">Got 10 burner wallets with $1 of ETH left in each? Sweep them all to a single cold wallet in one click.</p>
+            <p className="page-subtitle">Got 10 burner wallets with $1 of ASTER left in each? Sweep them all to a single cold wallet in one click.</p>
 
             <div className="alert alert-warning" style={{ marginBottom: 24, alignItems: 'flex-start' }}>
                 <SweeperIcon style={{ width: 22, height: 22, flexShrink: 0, marginTop: 2, stroke: '#fcd34d' }} />

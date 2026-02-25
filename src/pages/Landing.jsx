@@ -20,7 +20,7 @@ const features = [
     {
         icon: <SweeperIcon className="feat-icon-svg" />,
         title: 'Dust Sweeper',
-        desc: 'Systematically sweep ETH gas and dust from multiple burner wallets to a cold wallet in one secure transaction.',
+        desc: 'Systematically sweep ASTER gas and dust from multiple burner wallets to a cold wallet in one secure transaction.',
         path: '/sweeper',
         color: 'yellow',
     },
@@ -129,7 +129,7 @@ export default function Landing() {
                 </div>
                 <div className="stat-divider" />
                 <div className="stat-item">
-                    <span className="stat-num">EVM</span>
+                    <span className="stat-num">Aster</span>
                     <span className="stat-lbl">Compatible</span>
                 </div>
             </section>

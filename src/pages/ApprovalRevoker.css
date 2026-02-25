@@ -1,15 +1,42 @@
-.approvals-list {
-    max-height: 500px;
-    overflow-y: auto;
-    padding-right: 8px;
+/* ApprovalRevoker.css */
+
+.allowance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.approval-item {
-    transition: transform 0.2s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.allowance-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
 }
 
-.approval-item:hover {
-    transform: translateX(4px);
-    border-color: rgba(255, 255, 255, 0.1);
+.allowance-item:hover {
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.allowance-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+@media (max-width: 640px) {
+    .allowance-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .allowance-item button {
+        width: 100%;
+        justify-content: center;
+    }
 }

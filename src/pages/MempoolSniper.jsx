@@ -92,7 +92,7 @@ export default function MempoolSniper() {
             addLog(`Liquidity add detected for Contract: ${targetValue}`, 'success')
         }
 
-        addLog(`Constructing buy transaction for ${ethAmount} ETH...`, 'info')
+        addLog(`Constructing buy transaction for ${ethAmount} ASTER...`, 'info')
 
         setTimeout(() => {
             if (!watchingRef.current) return
@@ -168,7 +168,7 @@ export default function MempoolSniper() {
 
                     <div style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
                         <div className="input-group" style={{ flex: 1, marginBottom: 0 }}>
-                            <label className="input-label">Buy Amount (ETH)</label>
+                            <label className="input-label">Buy Amount (ASTER)</label>
                             <input
                                 className="input"
                                 type="number"

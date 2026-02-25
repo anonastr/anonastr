@@ -31,9 +31,9 @@ export default function ExposureChecker() {
     const [error, setError] = useState('')
 
     async function connectWallet() {
-        if (!window.ethereum) { setError('No wallet detected. Install MetaMask.'); return }
+        if (!window.Aster) { setError('No wallet detected. Install MetaMask.'); return }
         try {
-            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+            const accounts = await window.Aster.request({ method: 'eth_requestAccounts' })
             setAddress(accounts[0])
         } catch {
             setError('Wallet connection rejected.')
@@ -44,7 +44,7 @@ export default function ExposureChecker() {
         setError('')
         setResult(null)
         const addr = address.trim()
-        if (!ethers.isAddress(addr)) { setError('Invalid Ethereum address.'); return }
+        if (!ethers.isAddress(addr)) { setError('Invalid Aster address.'); return }
 
         setLoading(true)
         try {
@@ -77,7 +77,7 @@ export default function ExposureChecker() {
 
             const balEth = parseFloat(ethers.formatEther(balance))
             if (balEth > 10) {
-                risks.push({ text: `Large balance: ${balEth.toFixed(4)} ETH — high-value target`, severity: 'medium' })
+                risks.push({ text: `Large balance: ${balEth.toFixed(4)} ASTER — high-value target`, severity: 'medium' })
                 score += 10
             }
 
