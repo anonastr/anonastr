@@ -142,6 +142,49 @@
     transition: all 0.2s;
 }
 
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 11, 7, 0.98);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 240px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    margin-top: 12px;
+}
+
+/* Invisible bridge so hover doesn't break */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    display: flex;
+    animation: fadeUp 0.2s ease forwards;
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -170,6 +213,32 @@
     }
 
     .chain-badge {
+        display: none;
+    }
+
+    .nav-dropdown {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .dropdown-toggle {
+        display: none;
+        /* Hide the toggle on mobile, just show links directly */
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: flex;
+        transform: none;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .dropdown-menu::before {
         display: none;
     }
 }

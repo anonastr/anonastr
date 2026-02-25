@@ -73,16 +73,26 @@ export default function Navbar() {
                 </NavLink>
 
                 <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-                    {navItems.map((item) => {
-                        const IconComponent = item.Icon
-                        return (
-                            <NavLink key={item.path} to={item.path}
-                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                                <IconComponent />
-                                {item.label}
-                            </NavLink>
-                        )
-                    })}
+                    <div className="nav-dropdown">
+                        <div className="nav-link dropdown-toggle">
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)' }}>
+                                Privacy Tools <span style={{ fontSize: '0.8em', opacity: 0.6 }}>▼</span>
+                            </span>
+                        </div>
+                        <div className="dropdown-menu">
+                            {navItems.map((item) => {
+                                const IconComponent = item.Icon
+                                return (
+                                    <NavLink key={item.path} to={item.path}
+                                        className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                        onClick={() => setMenuOpen(false)}>
+                                        <IconComponent />
+                                        {item.label}
+                                    </NavLink>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
 
                 <div className="navbar-right" style={{ display: 'flex', gap: '8px' }}>
