@@ -1,6 +1,6 @@
 # Anonastr 🔐 
 
-**The ultimate privacy toolkit for crypto natives.**
+**The ultimate privacy toolkit for degens.**
 
 A completely free, client-side hub designed to help you stay anonymous and secure on Aster chain. Here are the 7 powerful tools included:
 
