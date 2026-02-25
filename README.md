@@ -1,17 +1,19 @@
 # Anonastr 🔐 
 
-**Protocol Engineer building privacy-preserving Web3 tools and secure decentralized infrastructure.**
+**The ultimate privacy toolkit for crypto natives. Built by a professional dev to keep your on-chain moves completely off the radar.**
 
-Launch day for Anonastr 🔐 
+A completely free, client-side hub designed to help you stay anonymous and secure on EVM chains. Here are the 8 powerful tools included:
 
-A new hub built from the ground up to keep your moves off the radar. So what does it do?
-👀 Check your wallet exposure
-🥷 Generate stealth wallets in 1 click
-📊 Flex your PnL without doxxing your main wallet
-🎫 Claim your Anon Tag
+1. **👀 Wallet Exposure Checker**: See exactly how much your wallet reveals about you and get a privacy risk score.
+2. **🥷 Stealth Wallet Generator**: Create fresh burner wallets safely in your own browser. Pure entropy, zero tracking.
+3. **🧹 Dust Sweeper**: Got random pennies of ETH stuck across multiple burner wallets? Sweep it all into one wallet in a single click.
+4. **🛡️ Approval Revoker**: Scan your wallet for risky smart contract approvals and revoke them instantly so you don't get drained.
+5. **🪄 Multi-Wallet Bundler**: Send buy and sell transactions from up to 10 wallets at the exact same time to avoid front-running bots.
+6. **🎯 Mempool Sniper**: Watch the blockchain mempool perfectly to snipe new token launches the exact millisecond liquidity is added.
+7. **📊 Private PnL Card**: Show off your trading wins with a shareable image without ever revealing your actual wallet address.
+8. **🎫 Anon Degen Tag**: Claim an anonymous username generated directly from your wallet hash (like ghost#4829).
 
-Built for DeGens. Hosted locally on your browser. No tracking, ever.
-[Anonastr.xyz] 
+Built for DeGens. 100% Client-Side. No tracking, ever. [Anonastr.xyz]
 
 ---
 
