@@ -123,7 +123,7 @@ export default function Landing() {
                 <div className="stat-divider" />
                 <div className="stat-item">
                     <span className="stat-num">Aster</span>
-                    <span className="stat-lbl">Compatible</span>
+                    <span className="stat-lbl">CHAIN</span>
                 </div>
             </section>
         </div>
