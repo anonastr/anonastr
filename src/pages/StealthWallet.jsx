@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { ethers } from 'ethers'
 import { KeyIcon } from '../components/icons'
 import './StealthWallet.css'
@@ -13,39 +13,10 @@ function copyToClipboard(text, setCopied, key) {
 export default function StealthWallet() {
     const [wallets, setWallets] = useState([])
     const [count, setCount] = useState(1)
-    const [vanityPrefix, setVanityPrefix] = useState('')
-    const [isMining, setIsMining] = useState(false)
-    const [attempts, setAttempts] = useState(0)
     const [revealed, setRevealed] = useState({})
     const [copied, setCopied] = useState('')
-    const miningRef = useRef(false)
-
-    // Cleanup on unmount
-    useEffect(() => {
-        return () => {
-            miningRef.current = false
-        }
-    }, [])
 
     function generateWallets() {
-        if (isMining) {
-            miningRef.current = false
-            setIsMining(false)
-            return
-        }
-
-        const prefix = vanityPrefix.trim().toLowerCase()
-        if (prefix) {
-            // Validate hex chars only
-            if (!/^[0-9a-f]+$/i.test(prefix)) {
-                alert('Prefix must only contain hex characters (0-9, a-f, A-F)')
-                return
-            }
-            startMining(prefix)
-            return
-        }
-
-        // Standard generation
         const generated = Array.from({ length: count }, () => {
             const w = ethers.Wallet.createRandom()
             return {
@@ -57,53 +28,6 @@ export default function StealthWallet() {
         })
         setWallets(generated)
         setRevealed({})
-    }
-
-    function startMining(prefix) {
-        setIsMining(true)
-        setAttempts(0)
-        miningRef.current = true
-        setWallets([])
-        setRevealed({})
-
-        const foundWallets = []
-        let currentAttempts = 0
-        const batchSize = 100 // Balance between speed and UI responsiveness
-
-        function mineBatch() {
-            if (!miningRef.current) return
-
-            for (let i = 0; i < batchSize; i++) {
-                const w = ethers.Wallet.createRandom()
-                // Check if address (excluding '0x') contains the prefix/text
-                if (w.address.toLowerCase().slice(2).includes(prefix)) {
-                    foundWallets.push({
-                        id: crypto.randomUUID(),
-                        address: w.address,
-                        privateKey: w.privateKey,
-                        mnemonic: w.mnemonic.phrase,
-                    })
-
-                    if (foundWallets.length >= count) {
-                        setWallets(foundWallets)
-                        setIsMining(false)
-                        miningRef.current = false
-                        return
-                    }
-                }
-            }
-
-            currentAttempts += batchSize
-            setAttempts(currentAttempts)
-
-            // Yield to main thread then continue mining
-            if (miningRef.current) {
-                setTimeout(mineBatch, 0)
-            }
-        }
-
-        // Start the loop
-        setTimeout(mineBatch, 0)
     }
 
     function toggleReveal(id, field) {
@@ -147,47 +71,19 @@ export default function StealthWallet() {
                             className="input"
                             value={count}
                             onChange={e => setCount(Number(e.target.value))}
-                            disabled={isMining}
                         >
                             {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n} wallet{n > 1 ? 's' : ''}</option>)}
                         </select>
                     </div>
 
-                    <div className="input-group" style={{ flex: 1, marginBottom: 0 }}>
-                        <label className="input-label">Vanity Text (Optional)</label>
-                        <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-                            <span style={{ position: 'absolute', left: 12, color: 'var(--text-secondary)' }}>0x...</span>
-                            <input
-                                className="input"
-                                value={vanityPrefix}
-                                onChange={e => setVanityPrefix(e.target.value)}
-                                placeholder="anon"
-                                disabled={isMining}
-                                style={{ paddingLeft: 34, width: '100%' }}
-                            />
-                        </div>
-                    </div>
-
                     <button
-                        className={`btn ${isMining ? 'btn-secondary' : 'btn-primary'}`}
+                        className="btn btn-primary"
                         style={{ height: 50, minWidth: 140 }}
                         onClick={generateWallets}
                     >
-                        {isMining ? (
-                            <>Stop Mining</>
-                        ) : (
-                            <><KeyIcon color="black" style={{ width: 18, height: 18 }} /> {vanityPrefix ? 'Mine Wallets' : 'Generate'}</>
-                        )}
+                        <><KeyIcon color="black" style={{ width: 18, height: 18 }} /> Generate</>
                     </button>
                 </div>
-
-                {isMining && (
-                    <div className="alert alert-info fade-up" style={{ marginTop: 16 }}>
-                        <span className="loader" style={{ width: 16, height: 16 }} />
-                        Mining vanity addresses containing "{vanityPrefix.toLowerCase()}"...
-                        <span style={{ marginLeft: 'auto', fontFamily: 'var(--font-mono)' }}>{attempts.toLocaleString()} attempts</span>
-                    </div>
-                )}
             </div>
 
             {wallets.length > 0 && (
