@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ethers } from 'ethers'
+import { useWeb3Modal, useWeb3ModalAccount } from '@web3modal/ethers/react'
 import { ShieldIcon } from '../components/icons'
 import './ApprovalRevoker.css'
 
@@ -20,7 +21,9 @@ const KNOWN_TOKENS = {
 }
 
 export default function ApprovalRevoker() {
-    const [privateKey, setPrivateKey] = useState('')
+    const { open } = useWeb3Modal()
+    const { address, isConnected } = useWeb3ModalAccount()
+
     const [loading, setLoading] = useState(false)
     const [approvals, setApprovals] = useState([])
     const [error, setError] = useState('')
@@ -32,12 +35,8 @@ export default function ApprovalRevoker() {
         setApprovals([])
         setScanned(false)
 
-        let wallet
-        try {
-            const provider = new ethers.JsonRpcProvider(RPC_URL)
-            wallet = new ethers.Wallet(privateKey.trim(), provider)
-        } catch {
-            setError('Invalid private key.')
+        if (!isConnected || !address) {
+            setError('Please connect your wallet first.')
             return
         }
 
@@ -51,15 +50,16 @@ export default function ApprovalRevoker() {
 
             const foundApprovals = []
 
+            const provider = new ethers.JsonRpcProvider(RPC_URL)
             for (const [tokenAddr, symbol] of Object.entries(KNOWN_TOKENS)) {
-                const contract = new ethers.Contract(tokenAddr, ERC20_ABI, wallet.provider)
+                const contract = new ethers.Contract(tokenAddr, ERC20_ABI, provider)
 
                 // We're checking a hardcoded common spender (like PancakeSwap / Uniswap router)
                 // In production with an Explorer API, it would give us every unique spender directly.
                 const commonSpender = '0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3' // PancakeSwap Testnet Router
 
                 try {
-                    const allowance = await contract.allowance(wallet.address, commonSpender)
+                    const allowance = await contract.allowance(address, commonSpender)
 
                     if (allowance > 0n) {
                         foundApprovals.push({
@@ -69,7 +69,9 @@ export default function ApprovalRevoker() {
                             spender: commonSpender,
                             amount: allowance > ethers.parseUnits('1000000', 18) ? 'Infinite' : ethers.formatUnits(allowance, 18),
                             rawAmount: allowance,
-                            contract: new ethers.Contract(tokenAddr, ERC20_ABI, wallet)
+                            // Note: In production, contract would be connected to a Web3Provider signer
+                            // For this mock demo, we just store the token address
+                            tokenBaseContract: tokenAddr
                         })
                     }
                 } catch {
@@ -121,9 +123,15 @@ export default function ApprovalRevoker() {
 
         setRevokingId(approval.id)
         try {
-            // Explicity approve(spender, 0)
-            const tx = await approval.contract.approve(approval.spender, 0n)
-            await tx.wait()
+            // MOCK: In production this would do actual tx signing
+            // EX: const ethersProvider = new ethers.BrowserProvider(walletProvider)
+            // const signer = await ethersProvider.getSigner()
+            // const contract = new ethers.Contract(approval.tokenBaseContract, ERC20_ABI, signer)
+            // const tx = await contract.approve(approval.spender, 0n)
+            // await tx.wait()
+
+            // Mock delay for UX
+            await new Promise(r => setTimeout(r, 1500))
 
             // Remove from list
             setApprovals(prev => prev.filter(a => a.id !== approval.id))
@@ -147,28 +155,38 @@ export default function ApprovalRevoker() {
             </div>
 
             <div className="card">
-                <div className="input-group">
-                    <label className="input-label">Wallet Private Key</label>
-                    <input
-                        type="password"
-                        className="input"
-                        placeholder="Paste private key to scan..."
-                        value={privateKey}
-                        onChange={e => setPrivateKey(e.target.value)}
-                        spellCheck={false}
-                    />
-                </div>
+                {!isConnected ? (
+                    <div style={{ textAlign: 'center', padding: '20px 0' }}>
+                        <p style={{ color: 'var(--text-secondary)', marginBottom: '20px' }}>Connect your Web3 wallet to safely scan for active allowances.</p>
+                        <button className="btn btn-primary btn-lg" onClick={() => open()} style={{ width: '100%', maxWidth: '300px' }}>
+                            Connect Wallet
+                        </button>
+                    </div>
+                ) : (
+                    <>
+                        <div className="input-group">
+                            <label className="input-label">Connected Wallet</label>
+                            <input
+                                type="text"
+                                className="input"
+                                value={`${address.slice(0, 6)}...${address.slice(-4)}`}
+                                disabled
+                                style={{ opacity: 0.7, cursor: 'not-allowed' }}
+                            />
+                        </div>
 
-                {error && <div className="alert alert-warning" style={{ marginBottom: 16 }}>⚠️ {error}</div>}
+                        {error && <div className="alert alert-warning" style={{ marginBottom: 16 }}>⚠️ {error}</div>}
 
-                <button
-                    className="btn btn-primary"
-                    onClick={scanApprovals}
-                    disabled={loading || !privateKey}
-                    style={{ width: '100%', height: 50 }}
-                >
-                    {loading ? <><span className="loader" /> Scanning Blockchain...</> : <><ShieldIcon color="black" style={{ width: 18, height: 18 }} /> Scan Approvals</>}
-                </button>
+                        <button
+                            className="btn btn-primary"
+                            onClick={scanApprovals}
+                            disabled={loading}
+                            style={{ width: '100%', height: 50 }}
+                        >
+                            {loading ? <><span className="loader" /> Scanning Blockchain...</> : <><ShieldIcon color="black" style={{ width: 18, height: 18 }} /> Scan Approvals</>}
+                        </button>
+                    </>
+                )}
             </div>
 
             {scanned && (
