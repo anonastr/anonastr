@@ -22,7 +22,7 @@ function PadlockIcon({ size = 18 }) {
         />
     )
 }
-import { EyeIcon, KeyIcon, ChartIcon, TagIcon } from './icons'
+import { EyeIcon, KeyIcon, ChartIcon, TagIcon, SweeperIcon, ShieldIcon, BundlerIcon, SniperIcon } from './icons'
 
 function GithubIcon({ size = 18 }) {
     return (
@@ -43,6 +43,10 @@ function TwitterIcon({ size = 18 }) {
 const navItems = [
     { path: '/exposure', label: 'Exposure', Icon: EyeIcon },
     { path: '/stealth', label: 'Stealth Wallet', Icon: KeyIcon },
+    { path: '/sweeper', label: 'Dust Sweeper', Icon: SweeperIcon },
+    { path: '/revoke', label: 'Approval Revoker', Icon: ShieldIcon },
+    { path: '/bundle', label: 'Wallet Bundler', Icon: BundlerIcon },
+    { path: '/sniper', label: 'Mempool Sniper', Icon: SniperIcon },
     { path: '/pnl', label: 'PnL Card', Icon: ChartIcon },
     { path: '/tag', label: 'Anon Tag', Icon: TagIcon },
 ]

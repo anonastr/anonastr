@@ -1,0 +1,15 @@
+.approvals-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.approval-item {
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.approval-item:hover {
+    transform: translateX(4px);
+    border-color: rgba(255, 255, 255, 0.1);
+}

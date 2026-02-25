@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { EyeIcon, KeyIcon, ChartIcon, TagIcon } from '../components/icons'
+import { EyeIcon, KeyIcon, ChartIcon, TagIcon, SweeperIcon, ShieldIcon, BundlerIcon, SniperIcon } from '../components/icons'
 import './Landing.css'
 
 const features = [
@@ -18,6 +18,34 @@ const features = [
         color: 'purple',
     },
     {
+        icon: <SweeperIcon className="feat-icon-svg" />,
+        title: 'Dust Sweeper',
+        desc: 'Systematically sweep ETH gas and dust from multiple burner wallets to a cold wallet in one secure transaction.',
+        path: '/sweeper',
+        color: 'yellow',
+    },
+    {
+        icon: <ShieldIcon className="feat-icon-svg" />,
+        title: 'Approval Revoker',
+        desc: 'Scan your wallet for unlimited token approvals given to sketchy smart contracts and revoke them instantly.',
+        path: '/revoke',
+        color: 'red',
+    },
+    {
+        icon: <BundlerIcon className="feat-icon-svg" />,
+        title: 'Multi-Wallet Bundler',
+        desc: 'Bundle buy/sell transactions across up to 10 stealth wallets simultaneously to snipe launches and avoid front-running.',
+        path: '/bundle',
+        color: 'cyan',
+    },
+    {
+        icon: <SniperIcon className="feat-icon-svg" />,
+        title: 'Mempool Sniper',
+        desc: 'Watch the mempool to snipe token launches the exact millisecond liquidity is added.',
+        path: '/sniper',
+        color: 'yellow',
+    },
+    {
         icon: <ChartIcon className="feat-icon-svg" />,
         title: 'Private PnL Card',
         desc: 'See your real trade stats locally and flex with a shareable card — without revealing your wallet.',
@@ -29,7 +57,7 @@ const features = [
         title: 'Anon Degen Tag',
         desc: 'Get a permanent anonymous handle like ghost#4829 built from your wallet hash.',
         path: '/tag',
-        color: 'yellow',
+        color: 'blue',
     },
 ]
 
@@ -55,7 +83,7 @@ export default function Landing() {
                 </p>
                 <div className="hero-cta">
                     <button className="btn btn-primary btn-lg" onClick={() => navigate('/exposure')}>
-                        Check My Exposure →
+                        Sweep Your Dust →
                     </button>
                     <button className="btn btn-ghost btn-lg" onClick={() => navigate('/stealth')}>
                         Generate Stealth Wallet
@@ -96,7 +124,7 @@ export default function Landing() {
                 <div className="stat-divider" />
 
                 <div className="stat-item">
-                    <span className="stat-num">4</span>
+                    <span className="stat-num">8</span>
                     <span className="stat-lbl">Privacy Tools</span>
                 </div>
                 <div className="stat-divider" />

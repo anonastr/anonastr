@@ -1,0 +1,42 @@
+.terminal-card {
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-logs::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terminal-logs::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.terminal-logs::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.live-dot {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
