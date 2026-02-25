@@ -72,7 +72,7 @@ export default function ApprovalRevoker() {
                             contract: new ethers.Contract(tokenAddr, ERC20_ABI, wallet)
                         })
                     }
-                } catch (e) {
+                } catch {
                     // Ignore tokens that error out (might not exist on this specific network)
                 }
             }
@@ -101,7 +101,7 @@ export default function ApprovalRevoker() {
 
             setApprovals(foundApprovals)
             setScanned(true)
-        } catch (e) {
+        } catch {
             setError('Failed to scan approvals. Node might be rate-limiting.')
         } finally {
             setLoading(false)

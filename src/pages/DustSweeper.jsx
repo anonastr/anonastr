@@ -50,7 +50,6 @@ export default function DustSweeper() {
                     }
 
                     // Estimate gas for a simple transfer
-                    const txParams = { to: dest, value: balance } // Temp value to get gas
                     const gasLimit = 21000n // Standard ETH transfer
                     const feeData = await provider.getFeeData()
                     const gasPrice = feeData.gasPrice || (await provider.getBlock('latest')).baseFeePerGas
@@ -82,12 +81,12 @@ export default function DustSweeper() {
                         message: `Sent ${ethers.formatEther(amountToSend)} ETH`,
                         hash: tx.hash
                     })
-                } catch (e) {
-                    newResults.push({ address: wallet.address, status: 'error', message: e.message || 'Transaction failed' })
+                } catch (err) {
+                    newResults.push({ address: wallet.address, status: 'error', message: err.message || 'Transaction failed' })
                 }
             }
             setResults(newResults)
-        } catch (e) {
+        } catch {
             setError('An unexpected error occurred during sweeping.')
         } finally {
             setLoading(false)

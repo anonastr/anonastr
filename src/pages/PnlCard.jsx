@@ -35,7 +35,6 @@ export default function PnlCard() {
             ])
 
             // Estimate wallet age from block (BSC ~3s/block)
-            const blocksPerDay = 28800
             const estimatedDays = Math.min(Math.floor(txCount / 2) + 10, 730)
             const winRate = txCount > 0 ? Math.min(95, 40 + Math.floor((txCount % 60))) : 0
             const tier = txCount > 1000 ? 'GIGACHAD' : txCount > 500 ? 'CHAD' : txCount > 100 ? 'DEGEN' : 'NEWBIE'
@@ -51,7 +50,7 @@ export default function PnlCard() {
                 tierColor: tierColor[tier],
                 block,
             })
-        } catch (e) {
+        } catch {
             setError('Failed to fetch data. Try again.')
         } finally {
             setLoading(false)

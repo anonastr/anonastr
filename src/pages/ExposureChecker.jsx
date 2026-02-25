@@ -107,7 +107,7 @@ export default function ExposureChecker() {
                 score,
                 risks,
             })
-        } catch (e) {
+        } catch {
             setError('Failed to fetch on-chain data. Check your connection.')
         } finally {
             setLoading(false)

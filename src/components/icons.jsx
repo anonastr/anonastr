@@ -52,3 +52,11 @@ export const BundlerIcon = ({ className = "nav-icon", color = "#E8C49A", ...prop
         <path d="M12 10v4M10 12l2 2 2-2" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
     </svg>
 )
+
+export const SniperIcon = ({ className = "nav-icon", color = "#E8C49A", ...props }) => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className={className} {...props}>
+        <circle cx="12" cy="12" r="9" stroke={color} strokeWidth="1.5" />
+        <circle cx="12" cy="12" r="3" fill={color} opacity="0.8" />
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+)

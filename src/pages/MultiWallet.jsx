@@ -90,7 +90,7 @@ export default function MultiWallet() {
             const resolvedResults = await Promise.all(txPromises)
             setResults([...newResults, ...resolvedResults])
 
-        } catch (e) {
+        } catch {
             setError('Bundle execution failed catastrophically.')
         } finally {
             setLoading(false)

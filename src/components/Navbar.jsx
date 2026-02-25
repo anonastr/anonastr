@@ -62,6 +62,7 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     useEffect(() => setMenuOpen(false), [location])
 
     return (
@@ -73,13 +74,16 @@ export default function Navbar() {
                 </NavLink>
 
                 <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-                    {navItems.map(({ path, label, Icon }) => (
-                        <NavLink key={path} to={path}
-                            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                            <Icon />
-                            {label}
-                        </NavLink>
-                    ))}
+                    {navItems.map((item) => {
+                        const IconComponent = item.Icon
+                        return (
+                            <NavLink key={item.path} to={item.path}
+                                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                                <IconComponent />
+                                {item.label}
+                            </NavLink>
+                        )
+                    })}
                 </div>
 
                 <div className="navbar-right" style={{ display: 'flex', gap: '8px' }}>

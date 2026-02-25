@@ -1,0 +1,29 @@
+
+> Anonastr@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 209 modules transformed.
+[31m✗[39m Build failed in 1.99s
+[31merror during build:
+[31msrc/components/Navbar.jsx (25:85): "SniperIcon" is not exported by "src/components/icons.jsx", imported by "src/components/Navbar.jsx".[31m
+file: [36mC:/Users/advan/.gemini/antigravity/scratch/anonvault/src/components/Navbar.jsx:25:85[31m
+[33m
+23:     )
+24: }
+25: import { EyeIcon, KeyIcon, ChartIcon, TagIcon, SweeperIcon, ShieldIcon, BundlerIcon, SniperIcon } from './icons'
+                                                                                         ^
+26: 
+27: function GithubIcon({ size = 18 }) {
+[31m
+    at getRollupError (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/parseAst.js:402:41)
+    at error (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/parseAst.js:398:42)
+    at Module.error (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/node-entry.js:17040:16)
+    at Module.traceVariable (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/node-entry.js:17452:29)
+    at ModuleScope.findVariable (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/node-entry.js:15070:39)
+    at Identifier.bind (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/node-entry.js:5447:40)
+    at Property.bind (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/node-entry.js:2829:23)
+    at ObjectExpression.bind (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at ArrayExpression.bind (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at VariableDeclarator.bind (file:///C:/Users/advan/.gemini/antigravity/scratch/anonvault/node_modules/rollup/dist/es/shared/node-entry.js:2829:23)[39m

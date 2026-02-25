@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { ethers } from 'ethers'
+
 import { SniperIcon } from '../components/icons'
 import './MempoolSniper.css'
 
