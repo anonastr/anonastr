@@ -39,15 +39,7 @@ createWeb3Modal({
   chains: [mainnet],
   projectId,
   enableAnalytics: false,
-  featuredWalletIds: [
-    'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96', // MetaMask
-    '1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369', // Rainbow
-    '971e689d0a5be527bac79629b4ee9b925e82208e5168b733496a09c0faed0709', // OKX Wallet
-    '38f5d18bd8522c244bdd70cb4a68e0e718865155811c043f052fb9f1c51de662', // Bitget
-    'a797aa35c0fadbfc1a53e7f675162ed5226968b44a19ee3d24385c64d1d3c393', // Phantom
-    '640ef75edcf0fd0128a3f80c65798952ac20decc6baef9ac5e165b4c1945a60e', // Nightly
-  ],
-  allWallets: 'SHOW',
+  allWallets: 'HIDE',
   enableOnramp: false,
   features: {
     email: false,
