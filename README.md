@@ -2,7 +2,7 @@
 
 **The ultimate privacy toolkit for crypto natives.**
 
-A completely free, client-side hub designed to help you stay anonymous and secure on Aster chains. Here are the 7 powerful tools included:
+A completely free, client-side hub designed to help you stay anonymous and secure on Aster chain. Here are the 7 powerful tools included:
 
 1. **👀 Wallet Exposure Checker**: See exactly how much your wallet reveals about you and get a privacy risk score.
 2. **🥷 Stealth Wallet Generator**: Create fresh burner wallets safely in your own browser. Pure entropy, zero tracking.
