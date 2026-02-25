@@ -48,7 +48,6 @@ const navItems = [
     { path: '/bundle', label: 'Wallet Bundler', Icon: BundlerIcon },
     { path: '/sniper', label: 'Mempool Sniper', Icon: SniperIcon },
     { path: '/pnl', label: 'PnL Card', Icon: ChartIcon },
-    { path: '/tag', label: 'Anon Tag', Icon: TagIcon },
 ]
 
 export default function Navbar() {

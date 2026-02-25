@@ -2,7 +2,7 @@
 
 **The ultimate privacy toolkit for crypto natives.**
 
-A completely free, client-side hub designed to help you stay anonymous and secure on Aster chains. Here are the 8 powerful tools included:
+A completely free, client-side hub designed to help you stay anonymous and secure on Aster chains. Here are the 7 powerful tools included:
 
 1. **👀 Wallet Exposure Checker**: See exactly how much your wallet reveals about you and get a privacy risk score.
 2. **🥷 Stealth Wallet Generator**: Create fresh burner wallets safely in your own browser. Pure entropy, zero tracking.
@@ -11,9 +11,8 @@ A completely free, client-side hub designed to help you stay anonymous and secur
 5. **🪄 Multi-Wallet Bundler**: Send buy and sell transactions from up to 10 wallets at the exact same time to avoid front-running bots.
 6. **🎯 Mempool Sniper**: Watch the blockchain mempool perfectly to snipe new token launches the exact millisecond liquidity is added.
 7. **📊 Private PnL Card**: Show off your trading wins with a shareable image without ever revealing your actual wallet address.
-8. **🎫 Anon Degen Tag**: Claim an anonymous username generated directly from your wallet hash (like ghost#4829).
 
-Built for Degens. 100% Client-Side. No tracking, ever. [Anonastr.xyz]
+Built for DeGens. 100% Client-Side. No tracking, ever. [Anonastr.xyz]
 
 Privacy is good. Aster is good.
 

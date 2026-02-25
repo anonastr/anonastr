@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { EyeIcon, KeyIcon, ChartIcon, TagIcon, SweeperIcon, ShieldIcon, BundlerIcon, SniperIcon } from '../components/icons'
+import { EyeIcon, KeyIcon, ChartIcon, SweeperIcon, ShieldIcon, BundlerIcon, SniperIcon } from '../components/icons'
 import './Landing.css'
 
 const features = [
@@ -51,13 +51,6 @@ const features = [
         desc: 'See your real trade stats locally and flex with a shareable card — without revealing your wallet.',
         path: '/pnl',
         color: 'green',
-    },
-    {
-        icon: <TagIcon className="feat-icon-svg" />,
-        title: 'Anon Degen Tag',
-        desc: 'Get a permanent anonymous handle like ghost#4829 built from your wallet hash.',
-        path: '/tag',
-        color: 'blue',
     },
 ]
 
@@ -124,7 +117,7 @@ export default function Landing() {
                 <div className="stat-divider" />
 
                 <div className="stat-item">
-                    <span className="stat-num">8</span>
+                    <span className="stat-num">7</span>
                     <span className="stat-lbl">Privacy Tools</span>
                 </div>
                 <div className="stat-divider" />
