@@ -54,22 +54,11 @@ export default function ExposureChecker() {
                 provider.getBalance(addr),
             ])
 
-            // ENS check (mainnet only, will fail gracefully on testnet)
-            let hasENS = false
-            try {
-                const mainnetProvider = new ethers.JsonRpcProvider('https://eth.llamarpc.com')
-                const name = await mainnetProvider.lookupAddress(addr)
-                hasENS = !!name
-            } catch { /* ignore */ }
-
             // Risk factors
             const risks = []
             let score = 0
 
-            if (hasENS) {
-                risks.push({ text: 'Has ENS name — wallet is linked to a public identity', severity: 'high' })
-                score += 30
-            }
+
 
             if (txCount > 500) {
                 risks.push({ text: `High activity: ${txCount} transactions — wallet has a long history`, severity: 'high' })
@@ -115,7 +104,6 @@ export default function ExposureChecker() {
                 address: addr,
                 txCount,
                 balance: balEth.toFixed(4),
-                hasENS,
                 score,
                 risks,
             })
@@ -185,7 +173,7 @@ export default function ExposureChecker() {
                             <div className="score-stats">
                                 <div className="stat-box"><div className="stat-value">{result.txCount}</div><div className="stat-label">Transactions</div></div>
                                 <div className="stat-box"><div className="stat-value">{result.balance}</div><div className="stat-label">ASTER Balance</div></div>
-                                <div className="stat-box"><div className="stat-value">{result.hasENS ? 'Yes' : 'No'}</div><div className="stat-label">Has ENS</div></div>
+
                             </div>
                         </div>
                     </div>
@@ -205,7 +193,7 @@ export default function ExposureChecker() {
 
                     {/* Recommendations */}
                     <div className="alert alert-info" style={{ marginTop: 16 }}>
-                        💡 <strong>Tips:</strong> Use a stealth wallet for new interactions, avoid ENS on trading wallets, and never deposit directly from a CEX to your main wallet.
+                        💡 <strong>Tips:</strong> Use a stealth wallet for new interactions, and never deposit directly from a CEX to your main wallet.
                     </div>
                 </div>
             )}
