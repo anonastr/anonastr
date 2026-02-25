@@ -12,7 +12,7 @@ A completely free, client-side hub designed to help you stay anonymous and secur
 6. **🎯 Mempool Sniper**: Watch the blockchain mempool perfectly to snipe new token launches the exact millisecond liquidity is added.
 7. **📊 Private PnL Card**: Show off your trading wins with a shareable image without ever revealing your actual wallet address.
 
-Built for DeGens. 100% Client-Side. No tracking, ever. [Anonastr.xyz]
+Built for Degens. 100% Client-Side. No tracking, ever. [Anonastr.xyz]
 
 Privacy is good. Aster is good.
 
