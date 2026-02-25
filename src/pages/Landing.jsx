@@ -69,7 +69,7 @@ export default function Landing() {
             {/* Hero */}
             <section className="hero fade-up">
                 <h1 className="hero-title pt-6">
-                    STAY ANON. <span className="gradient-text">STAY SAFU.</span>
+                    PRIVACY IS <span className="gradient-text">GOOD</span>
                 </h1>
                 <p className="hero-subtitle">
                     The ultimate privacy toolkit for degens. Generate stealth wallets, sweep dust, revoke approvals, bundle transactions, snipe token launches, check exposure, and flex PnL completely off the grid.
