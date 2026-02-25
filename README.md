@@ -1,6 +1,6 @@
 # Anonastr 🔐 
 
-**professional dev**
+**Protocol Engineer building privacy-preserving Web3 tools and secure decentralized infrastructure.**
 
 Launch day for Anonastr 🔐 
 
