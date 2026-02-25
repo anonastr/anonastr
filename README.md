@@ -1,6 +1,6 @@
 # Anonastr 🔐 
 
-**Privacy Hub for Degens**
+**professional dev**
 
 Launch day for Anonastr 🔐 
 
