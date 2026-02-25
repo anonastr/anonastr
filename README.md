@@ -1,6 +1,6 @@
 # Anonastr 🔐 
 
-**The ultimate privacy toolkit for crypto natives. Built by a professional dev to keep your on-chain moves completely off the radar.**
+**The ultimate privacy toolkit for crypto natives.**
 
 A completely free, client-side hub designed to help you stay anonymous and secure on EVM chains. Here are the 8 powerful tools included:
 
@@ -13,7 +13,9 @@ A completely free, client-side hub designed to help you stay anonymous and secur
 7. **📊 Private PnL Card**: Show off your trading wins with a shareable image without ever revealing your actual wallet address.
 8. **🎫 Anon Degen Tag**: Claim an anonymous username generated directly from your wallet hash (like ghost#4829).
 
-Built for DeGens. 100% Client-Side. No tracking, ever. [Anonastr.xyz]
+Built for Degens. 100% Client-Side. No tracking, ever. [Anonastr.xyz]
+
+Privacy is good. Aster is good.
 
 ---
 
