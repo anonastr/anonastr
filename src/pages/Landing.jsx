@@ -118,7 +118,7 @@ export default function Landing() {
 
                 <div className="stat-item">
                     <span className="stat-num">7</span>
-                    <span className="stat-lbl">Privacy Tools</span>
+                    <span className="stat-lbl">Tools</span>
                 </div>
                 <div className="stat-divider" />
                 <div className="stat-item">
