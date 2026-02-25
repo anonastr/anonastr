@@ -1,0 +1,28 @@
+<svg width="400" height="100" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .logo-text {
+            font-family: 'Righteous', 'Space Grotesk', sans-serif;
+            font-size: 58px;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            fill: #FDECB3;
+        }
+        .logo-shadow {
+            font-family: 'Righteous', 'Space Grotesk', sans-serif;
+            font-size: 58px;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+    </style>
+    <!-- Hard-edged 3D block shadow effect layers -->
+    <text x="20" y="77" class="logo-shadow" fill="rgba(0, 0, 0, 0.8)" filter="blur(2px)">Anonastr</text>
+    <text x="20" y="75" class="logo-shadow" fill="#472B0B">Anonastr</text>
+    <text x="20" y="74" class="logo-shadow" fill="#6A4416">Anonastr</text>
+    <text x="20" y="73" class="logo-shadow" fill="#8C5E25">Anonastr</text>
+    <text x="20" y="72" class="logo-shadow" fill="#AB7C3F">Anonastr</text>
+    <text x="20" y="71" class="logo-shadow" fill="#C69A5D">Anonastr</text>
+    <!-- Main solid gold face -->
+    <text x="20" y="70" class="logo-text">Anonastr</text>
+</svg>

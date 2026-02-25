@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anonastr High-Res Assets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0D0B07;
+            color: #F5EAD8;
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 { font-family: 'Righteous', sans-serif; letter-spacing: 2px; color: #E8C49A; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        .card {
+            background: rgba(232, 196, 154, 0.03);
+            border: 1px solid rgba(232, 196, 154, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        button {
+            background: linear-gradient(135deg, #E8C49A, #C4903A);
+            color: #0D0B07;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 16px;
+            font-size: 15px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(232, 196, 154, 0.3);
+        }
+        .preview-box {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+            padding: 10px;
+        }
+        h3 { margin: 0 0 4px 0; }
+        p.info { margin: 0; font-size: 12px; color: #A89070; }
+    </style>
+</head>
+<body>
+
+    <h1>Brand Assets Generator</h1>
+    <p>Please wait a moment while the custom fonts and high-resolution SVG vectors are rasterized...</p>
+
+    <div class="grid" id="controls" style="opacity: 0; transition: opacity 0.5s;">
+        
+        <div class="card">
+            <div class="preview-box">
+                <img id="prev-padlock" style="height: 120px; object-fit: contain;" />
+            </div>
+            <h3>Padlock Icon</h3>
+            <p class="info">Transparent BG • 2000x2333 PNG</p>
+            <button onclick="downloadPadlock()">Download Padlock</button>
+        </div>
+
+        <div class="card">
+            <div class="preview-box">
+                <img id="prev-text" style="height: 60px; object-fit: contain;" />
+            </div>
+            <h3>Anonastr Text</h3>
+            <p class="info">Transparent BG • 2000x600 PNG</p>
+            <button onclick="downloadText()">Download Text</button>
+        </div>
+
+        <div class="card">
+            <div class="preview-box">
+                <img id="prev-combined" style="height: 80px; object-fit: contain;" />
+            </div>
+            <h3>Combined Logo</h3>
+            <p class="info">Transparent BG • 3000x1200 PNG</p>
+            <button onclick="downloadCombined()">Download Combined</button>
+        </div>
+
+        <!-- Social Media Assets -->
+        <div class="card">
+            <div class="preview-box" style="background:#0D0B07">
+                <img id="prev-pfp" style="height: 150px; width: 150px; border-radius: 50%; border: 2px solid #E8C49A;" />
+            </div>
+            <h3>Twitter / X Profile Pic</h3>
+            <p class="info">Vibes BG • 1080x1080 PNG</p>
+            <button onclick="downloadPfp()">Download Profile Picture</button>
+        </div>
+
+        <div class="card">
+            <div class="preview-box" style="background:#0D0B07">
+                <img id="prev-banner" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <h3>Twitter / X Banner</h3>
+            <p class="info">Vibes BG • 1500x500 PNG</p>
+            <button onclick="downloadBanner()">Download Banner Page</button>
+        </div>
+
+    </div>
+
+    <script>
+        function getPadlockSvgStr(w, h) {
+            return `<svg width="${w}" height="${h}" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="bodyFill3d" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#2C1F0A" />
+                        <stop offset="50%" stopColor="#140E04" />
+                        <stop offset="100%" stopColor="#06040A" />
+                    </linearGradient>
+                    <linearGradient id="borderGold3d" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#FFE898" />
+                        <stop offset="40%" stopColor="#E8C49A" />
+                        <stop offset="100%" stopColor="#6B4710" />
+                    </linearGradient>
+                    <linearGradient id="shackleGold" x1="17" y1="0" x2="43" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stopColor="#6B4710" />
+                        <stop offset="30%" stopColor="#FFE898" />
+                        <stop offset="60%" stopColor="#E8C49A" />
+                        <stop offset="100%" stopColor="#6B4710" />
+                    </linearGradient>
+                </defs>
+                <rect x="8" y="35" width="50" height="34" rx="8" fill="rgba(0,0,0,0.55)" />
+                <path d="M 43,34 L 43,17 A 13,13 0 0 0 17,17 L 17,8" stroke="#3D2605" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M 43,34 L 43,17 A 13,13 0 0 0 17,17 L 17,8" stroke="url(#shackleGold)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M 43,34 L 43,17 A 13,13 0 0 0 17,17 L 17,8" stroke="rgba(255,245,200,0.55)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <rect x="5" y="32" width="50" height="34" rx="8" fill="url(#bodyFill3d)" stroke="url(#borderGold3d)" strokeWidth="2.5" />
+                <rect x="7" y="32.5" width="46" height="6" rx="4" fill="rgba(255,230,120,0.13)" />
+                <rect x="7" y="56" width="46" height="8" rx="4" fill="rgba(0,0,0,0.28)" />
+                <line x1="54.5" y1="35" x2="54.5" y2="63" stroke="rgba(0,0,0,0.35)" strokeWidth="2" />
+                <rect x="12" y="29" width="7.5" height="6" rx="1.8" fill="#07050108" />
+                <rect x="12" y="29" width="7.5" height="6" rx="1.8" fill="#0D0B07" />
+                <line x1="30" y1="34.5" x2="30" y2="63" stroke="#E8C49A" strokeWidth="0.6" opacity="0.22" />
+                <line x1="7" y1="49" x2="53" y2="49" stroke="#E8C49A" strokeWidth="0.6" opacity="0.22" />
+                <g style="origin: 30px 48px; transform: scale(0.67)">
+                    <ellipse cx="18" cy="41" rx="8" ry="5.5" stroke="#E8C49A" strokeWidth="1.6" fill="none" />
+                    <circle cx="18" cy="41" r="2.5" fill="#E8C49A" />
+                    <circle cx="42" cy="41" r="4.5" stroke="#E8C49A" strokeWidth="1.6" fill="none" />
+                    <line x1="42" y1="45.5" x2="42" y2="51" stroke="#E8C49A" strokeWidth="1.7" strokeLinecap="round" />
+                    <line x1="39.5" y1="48.5" x2="42" y2="48.5" stroke="#E8C49A" strokeWidth="1.4" strokeLinecap="round" />
+                    <line x1="39.5" y1="51" x2="42" y2="51" stroke="#E8C49A" strokeWidth="1.4" strokeLinecap="round" />
+                    <rect x="8" y="58" width="3" height="4" rx="0.5" fill="#E8C49A" opacity="0.55" />
+                    <rect x="12" y="54" width="3" height="8" rx="0.5" fill="#E8C49A" opacity="0.8" />
+                    <rect x="16" y="50" width="3" height="12" rx="0.5" fill="#E8C49A" />
+                    <path d="M32,53 L41,53 L47,59 L41,65 L32,65 Z" stroke="#E8C49A" strokeWidth="1.6" fill="none" strokeLinejoin="round" />
+                    <circle cx="35" cy="59" r="1.8" fill="#E8C49A" />
+                </g>
+            </svg>`;
+        }
+
+        function drawAnonastrText(ctx, x, y, fontSize) {
+            ctx.font = `${fontSize}px Righteous`;
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+            if ('letterSpacing' in ctx) ctx.letterSpacing = (fontSize * 0.18) + 'px';
+            const text = "Anonastr";
+            
+            ctx.shadowColor = 'rgba(0,0,0,0.8)';
+            ctx.shadowOffsetY = fontSize * 0.12;
+            ctx.shadowBlur = fontSize * 0.05;
+            ctx.fillStyle = '#472B0B'; ctx.fillText(text, x, y + fontSize * 0.086);
+            ctx.shadowColor = 'transparent';
+
+            ctx.fillStyle = '#472B0B'; ctx.fillText(text, x, y + fontSize * 0.086);
+            ctx.fillStyle = '#6A4416'; ctx.fillText(text, x, y + fontSize * 0.069);
+            ctx.fillStyle = '#8C5E25'; ctx.fillText(text, x, y + fontSize * 0.051);
+            ctx.fillStyle = '#AB7C3F'; ctx.fillText(text, x, y + fontSize * 0.034);
+            ctx.fillStyle = '#C69A5D'; ctx.fillText(text, x, y + fontSize * 0.017);
+            ctx.fillStyle = '#FDECB3'; ctx.fillText(text, x, y);
+        }
+
+        async function createImgFromSvg(w, h) {
+            const str = getPadlockSvgStr(w, h);
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            return new Promise(resolve => {
+                img.onload = () => resolve(img);
+                img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(str);
+            });
+        }
+
+        function triggerDownload(canvas, filename) {
+            const url = canvas.toDataURL('image/png');
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+        }
+
+        /* ----- GENERATORS ----- */
+
+        async function genPadlock() {
+            const c = document.createElement('canvas');
+            c.width = 2000; c.height = 2333; // 60x70 ratio
+            const ctx = c.getContext('2d');
+            const img = await createImgFromSvg(2000, 2333);
+            ctx.drawImage(img, 0, 0);
+            return c;
+        }
+
+        function genText() {
+            const c = document.createElement('canvas');
+            c.width = 2000; c.height = 600;
+            const ctx = c.getContext('2d');
+            drawAnonastrText(ctx, 50, 300, 350);
+            return c;
+        }
+
+        async function genCombined() {
+            const c = document.createElement('canvas');
+            c.width = 3000; c.height = 1200;
+            const ctx = c.getContext('2d');
+            
+            const img = await createImgFromSvg(857, 1000); 
+            ctx.drawImage(img, 100, 100); 
+            
+            drawAnonastrText(ctx, 1100, 600, 420);
+            return c;
+        }
+
+        async function genPfp() {
+            const c = document.createElement('canvas');
+            c.width = 1080; c.height = 1080;
+            const ctx = c.getContext('2d');
+            
+            // BG Grid & Shadow
+            ctx.fillStyle = '#0D0B07';
+            ctx.fillRect(0, 0, 1080, 1080);
+
+            const glow = ctx.createRadialGradient(540, 540, 0, 540, 540, 700);
+            glow.addColorStop(0, 'rgba(232, 196, 154, 0.15)');
+            glow.addColorStop(1, 'transparent');
+            ctx.fillStyle = glow;
+            ctx.fillRect(0, 0, 1080, 1080);
+            
+            const img = await createImgFromSvg(617, 720); 
+            ctx.drawImage(img, 231, 180); 
+            return c;
+        }
+
+        async function genBanner() {
+            const c = document.createElement('canvas');
+            c.width = 1500; c.height = 500;
+            const ctx = c.getContext('2d');
+
+            // Ambient background
+            const grad = ctx.createRadialGradient(750, 250, 0, 750, 250, 800);
+            grad.addColorStop(0, '#141009');
+            grad.addColorStop(1, '#0D0B07');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, 1500, 500);
+
+            // Subtle grid
+            ctx.strokeStyle = 'rgba(232,196,154,0.03)';
+            ctx.lineWidth = 1;
+            for(let i=0; i<1500; i+=40) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, 500); ctx.stroke(); }
+            for(let i=0; i<500; i+=40) { ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(1500, i); ctx.stroke(); }
+
+            // Math to center the Combined Logo 
+            // Padlock is ~222x260, text is on the right
+            const img = await createImgFromSvg(222, 260);
+            ctx.drawImage(img, 320, 120);
+            
+            drawAnonastrText(ctx, 580, 250, 150);
+            return c;
+        }
+
+        // Actions
+        async function downloadPadlock() { triggerDownload(await genPadlock(), "Anonastr-padlock.png"); }
+        async function downloadText() { triggerDownload(genText(), "Anonastr-text.png"); }
+        async function downloadCombined() { triggerDownload(await genCombined(), "Anonastr-combined.png"); }
+        async function downloadPfp() { triggerDownload(await genPfp(), "Anonastr-pfp.png"); }
+        async function downloadBanner() { triggerDownload(await genBanner(), "Anonastr-banner.png"); }
+
+        // Start initialization
+        window.onload = async () => {
+            await document.fonts.ready;
+            
+            // Generate preview blob urls
+            const bP = await genPadlock();
+            bP.toBlob(b => document.getElementById('prev-padlock').src = URL.createObjectURL(b));
+            
+            const bT = genText();
+            bT.toBlob(b => document.getElementById('prev-text').src = URL.createObjectURL(b));
+            
+            const bC = await genCombined();
+            bC.toBlob(b => document.getElementById('prev-combined').src = URL.createObjectURL(b));
+            
+            const bpfp = await genPfp();
+            bpfp.toBlob(b => document.getElementById('prev-pfp').src = URL.createObjectURL(b));
+            
+            const bban = await genBanner();
+            bban.toBlob(b => document.getElementById('prev-banner').src = URL.createObjectURL(b));
+
+            document.getElementById('controls').style.opacity = 1;
+        };
+    </script>
+</body>
+</html>

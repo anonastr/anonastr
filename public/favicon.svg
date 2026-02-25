@@ -1,0 +1,45 @@
+<svg width="60" height="70" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bodyFill3d" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#2C1F0A" />
+            <stop offset="50%" stopColor="#140E04" />
+            <stop offset="100%" stopColor="#06040A" />
+        </linearGradient>
+        <linearGradient id="borderGold3d" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#FFE898" />
+            <stop offset="40%" stopColor="#E8C49A" />
+            <stop offset="100%" stopColor="#6B4710" />
+        </linearGradient>
+        <linearGradient id="shackleGold" x1="17" y1="0" x2="43" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#6B4710" />
+            <stop offset="30%" stopColor="#FFE898" />
+            <stop offset="60%" stopColor="#E8C49A" />
+            <stop offset="100%" stopColor="#6B4710" />
+        </linearGradient>
+    </defs>
+    <rect x="8" y="35" width="50" height="34" rx="8" fill="rgba(0,0,0,0.55)" />
+    <path d="M 43,34 L 43,17 A 13,13 0 0 0 17,17 L 17,8" stroke="#3D2605" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M 43,34 L 43,17 A 13,13 0 0 0 17,17 L 17,8" stroke="url(#shackleGold)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M 43,34 L 43,17 A 13,13 0 0 0 17,17 L 17,8" stroke="rgba(255,245,200,0.55)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <rect x="5" y="32" width="50" height="34" rx="8" fill="url(#bodyFill3d)" stroke="url(#borderGold3d)" strokeWidth="2.5" />
+    <rect x="7" y="32.5" width="46" height="6" rx="4" fill="rgba(255,230,120,0.13)" />
+    <rect x="7" y="56" width="46" height="8" rx="4" fill="rgba(0,0,0,0.28)" />
+    <line x1="54.5" y1="35" x2="54.5" y2="63" stroke="rgba(0,0,0,0.35)" strokeWidth="2" />
+    <rect x="12" y="29" width="7.5" height="6" rx="1.8" fill="#07050108" />
+    <rect x="12" y="29" width="7.5" height="6" rx="1.8" fill="#0D0B07" />
+    <line x1="30" y1="34.5" x2="30" y2="63" stroke="#E8C49A" strokeWidth="0.6" opacity="0.22" />
+    <line x1="7" y1="49" x2="53" y2="49" stroke="#E8C49A" strokeWidth="0.6" opacity="0.22" />
+    <g style="transform-origin: 30px 48px; transform: scale(0.67)">
+        <ellipse cx="18" cy="41" rx="8" ry="5.5" stroke="#E8C49A" strokeWidth="1.6" fill="none" />
+        <circle cx="18" cy="41" r="2.5" fill="#E8C49A" />
+        <circle cx="42" cy="41" r="4.5" stroke="#E8C49A" strokeWidth="1.6" fill="none" />
+        <line x1="42" y1="45.5" x2="42" y2="51" stroke="#E8C49A" strokeWidth="1.7" strokeLinecap="round" />
+        <line x1="39.5" y1="48.5" x2="42" y2="48.5" stroke="#E8C49A" strokeWidth="1.4" strokeLinecap="round" />
+        <line x1="39.5" y1="51" x2="42" y2="51" stroke="#E8C49A" strokeWidth="1.4" strokeLinecap="round" />
+        <rect x="8" y="58" width="3" height="4" rx="0.5" fill="#E8C49A" opacity="0.55" />
+        <rect x="12" y="54" width="3" height="8" rx="0.5" fill="#E8C49A" opacity="0.8" />
+        <rect x="16" y="50" width="3" height="12" rx="0.5" fill="#E8C49A" />
+        <path d="M32,53 L41,53 L47,59 L41,65 L32,65 Z" stroke="#E8C49A" strokeWidth="1.6" fill="none" strokeLinejoin="round" />
+        <circle cx="35" cy="59" r="1.8" fill="#E8C49A" />
+    </g>
+</svg>

@@ -1,0 +1,68 @@
+.wallets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.wallet-card {
+    border-color: rgba(16, 185, 129, 0.15);
+}
+
+.wallet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.wallet-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.field-row {
+    margin-bottom: 14px;
+}
+
+.field-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.safe-label {
+    color: var(--green);
+    font-size: 0.76rem;
+    margin-left: 6px;
+}
+
+.danger-label {
+    color: var(--red);
+    font-size: 0.76rem;
+    margin-left: 6px;
+}
+
+.field-value {
+    flex: 1;
+    word-break: break-all;
+    line-height: 1.5;
+}
+
+.mono {
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+}
+
+.mnemonic-field {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.mnemonic-field .field-value {
+    min-width: 100%;
+    margin-bottom: 8px;
+}
