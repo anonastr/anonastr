@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@web3modal/ethers": "^5.1.11",
+    "@web3modal/react": "^2.7.1",
     "ethers": "^6.16.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ethers } from 'ethers'
+import { useWeb3Modal, useWeb3ModalAccount } from '@web3modal/ethers/react'
 import { EyeIcon } from '../components/icons'
 import './ExposureChecker.css'
 
@@ -30,13 +31,22 @@ export default function ExposureChecker() {
     const [result, setResult] = useState(null)
     const [error, setError] = useState('')
 
+    const { open } = useWeb3Modal()
+    const { address: connectedAddress, isConnected } = useWeb3ModalAccount()
+
+    // Sync Web3Modal connection with local input
+    useEffect(() => {
+        if (isConnected && connectedAddress) {
+            setAddress(connectedAddress)
+        }
+    }, [isConnected, connectedAddress])
+
     async function connectWallet() {
-        if (!window.Aster) { setError('No wallet detected. Install MetaMask.'); return }
+        setError('')
         try {
-            const accounts = await window.Aster.request({ method: 'eth_requestAccounts' })
-            setAddress(accounts[0])
+            await open()
         } catch {
-            setError('Wallet connection rejected.')
+            setError('Wallet connection failed.')
         }
     }
 

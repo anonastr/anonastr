@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { ethers } from 'ethers'
+import { useWeb3Modal, useWeb3ModalAccount } from '@web3modal/ethers/react'
 import { ChartIcon } from '../components/icons'
 import './PnlCard.css'
 
@@ -12,12 +13,23 @@ export default function PnlCard() {
     const [error, setError] = useState('')
     const canvasRef = useRef(null)
 
+    const { open } = useWeb3Modal()
+    const { address: connectedAddress, isConnected } = useWeb3ModalAccount()
+
+    // Sync Web3Modal connection with local input
+    useEffect(() => {
+        if (isConnected && connectedAddress) {
+            setAddress(connectedAddress)
+        }
+    }, [isConnected, connectedAddress])
+
     async function connectWallet() {
-        if (!window.Aster) { setError('No wallet detected.'); return }
+        setError('')
         try {
-            const accounts = await window.Aster.request({ method: 'eth_requestAccounts' })
-            setAddress(accounts[0])
-        } catch { setError('Connection rejected.') }
+            await open()
+        } catch {
+            setError('Connection failed.')
+        }
     }
 
     async function loadStats() {

@@ -75,8 +75,8 @@ export default function StealthWallet() {
 
             for (let i = 0; i < batchSize; i++) {
                 const w = ethers.Wallet.createRandom()
-                // Check if address (excluding '0x') starts with prefix
-                if (w.address.toLowerCase().slice(2).startsWith(prefix)) {
+                // Check if address (excluding '0x') contains the prefix/text
+                if (w.address.toLowerCase().slice(2).includes(prefix)) {
                     foundWallets.push({
                         id: crypto.randomUUID(),
                         address: w.address,
@@ -149,14 +149,14 @@ export default function StealthWallet() {
                             onChange={e => setCount(Number(e.target.value))}
                             disabled={isMining}
                         >
-                            {[1, 2, 3, 5].map(n => <option key={n} value={n}>{n} wallet{n > 1 ? 's' : ''}</option>)}
+                            {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n} wallet{n > 1 ? 's' : ''}</option>)}
                         </select>
                     </div>
 
                     <div className="input-group" style={{ flex: 1, marginBottom: 0 }}>
-                        <label className="input-label">Vanity Prefix (Optional)</label>
+                        <label className="input-label">Vanity Text (Optional)</label>
                         <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-                            <span style={{ position: 'absolute', left: 12, color: 'var(--text-secondary)' }}>0x</span>
+                            <span style={{ position: 'absolute', left: 12, color: 'var(--text-secondary)' }}>0x...</span>
                             <input
                                 className="input"
                                 value={vanityPrefix}
@@ -184,7 +184,7 @@ export default function StealthWallet() {
                 {isMining && (
                     <div className="alert alert-info fade-up" style={{ marginTop: 16 }}>
                         <span className="loader" style={{ width: 16, height: 16 }} />
-                        Mining vanity addresses starting with "0x{vanityPrefix.toLowerCase()}"...
+                        Mining vanity addresses containing "{vanityPrefix.toLowerCase()}"...
                         <span style={{ marginLeft: 'auto', fontFamily: 'var(--font-mono)' }}>{attempts.toLocaleString()} attempts</span>
                     </div>
                 )}
