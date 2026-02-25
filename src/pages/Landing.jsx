@@ -122,7 +122,7 @@ export default function Landing() {
                 </div>
                 <div className="stat-divider" />
                 <div className="stat-item">
-                    <span className="stat-num">Aster</span>
+                    <span className="stat-num">ASTER</span>
                     <span className="stat-lbl">CHAIN</span>
                 </div>
             </section>
