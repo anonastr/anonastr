@@ -1,0 +1,1 @@
+fetch("https://explorer-api.walletconnect.com/w3m/v1/getWallets?projectId=b56e18d47c72ab683b108174691ce231&search=okx").then(r => r.json()).then(d => console.log(JSON.stringify(d, null, 2))).catch(console.error)

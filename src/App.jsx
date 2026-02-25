@@ -47,6 +47,35 @@ createWeb3Modal({
     'a797aa35c0fadbfc1a53e7f675162ed5226968b44a19ee3d24385c64d1d3c393', // Phantom
     '640ef75edcf0fd0128a3f80c65798952ac20decc6baef9ac5e165b4c1945a60e', // Nightly
   ],
+  customWallets: [
+    {
+      id: '971e689d0a5be527bac79629b4ee9b925e82208e5168b733496a09c0faed0709',
+      name: 'OKX Wallet',
+      homepage: 'https://okx.com/web3',
+      image_url: 'https://registry.walletconnect.com/v2/logo/sm/971e689d0a5be527bac79629b4ee9b925e82208e5168b733496a09c0faed0709',
+      mobile_link: 'okex://main',
+      desktop_link: 'okex://main',
+      webapp_link: 'https://okx.com/download'
+    },
+    {
+      id: '1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369',
+      name: 'Rainbow',
+      homepage: 'https://rainbow.me',
+      image_url: 'https://registry.walletconnect.com/v2/logo/sm/1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369',
+      mobile_link: 'rainbow://',
+      desktop_link: 'rainbow://',
+      webapp_link: 'https://rainbow.me'
+    },
+    {
+      id: '38f5d18bd8522c244bdd70cb4a68e0e718865155811c043f052fb9f1c51de662',
+      name: 'Bitget',
+      homepage: 'https://web3.bitget.com',
+      image_url: 'https://registry.walletconnect.com/v2/logo/sm/38f5d18bd8522c244bdd70cb4a68e0e718865155811c043f052fb9f1c51de662',
+      mobile_link: 'bitkeep://',
+      desktop_link: 'bitkeep://',
+      webapp_link: 'https://web3.bitget.com'
+    }
+  ],
   allWallets: 'SHOW',
   enableOnramp: false,
   features: {
