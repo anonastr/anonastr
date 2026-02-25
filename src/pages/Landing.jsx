@@ -72,7 +72,7 @@ export default function Landing() {
                     STAY ANON. <span className="gradient-text">STAY SAFU.</span>
                 </h1>
                 <p className="hero-subtitle">
-                    The ultimate privacy toolkit for crypto natives. Generate stealth wallets, sweep dust, revoke approvals, bundle transactions, snipe token launches, check exposure, and flex PnL completely off the grid.
+                    The ultimate privacy toolkit for degens. Generate stealth wallets, sweep dust, revoke approvals, bundle transactions, snipe token launches, check exposure, and flex PnL completely off the grid.
                 </p>
                 <div className="hero-cta">
                     <button className="btn btn-primary btn-lg" onClick={() => navigate('/exposure')}>
